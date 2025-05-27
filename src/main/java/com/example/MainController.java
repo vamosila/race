@@ -87,15 +87,18 @@ public class MainController {
         racer.setId(genereteId());
         racer.setName(nameField.getText());
         racer.setBirth(birthPicker.getValue());
+        racer.setCategory(((RadioButton)category.getSelectedToggle()).getId());
+        racer.setAbsolute(absoluteCheck.isSelected());
+        racerTable.getItems().add(racer);
+        clearFields();
+    }
 
-        System.out.println(
-            ((RadioButton)category.getSelectedToggle()).getId()
-        );
-
-        racer.setCategory(null);
-
-        // racerTable.getItems().add();
-
+    private void clearFields() {
+        idField.clear();
+        nameField.clear();
+        birthPicker.setValue(null);
+        category.selectToggle(null);
+        absoluteCheck.setSelected(false);
     }
 
     private int genereteId() {
