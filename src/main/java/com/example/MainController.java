@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -84,7 +85,14 @@ public class MainController {
     void onClickAddButton(ActionEvent event) {
         Racer racer = new Racer();
         racer.setId(genereteId());
+        racer.setName(nameField.getText());
+        racer.setBirth(birthPicker.getValue());
 
+        System.out.println(
+            ((RadioButton)category.getSelectedToggle()).getId()
+        );
+
+        racer.setCategory(null);
 
         // racerTable.getItems().add();
 
