@@ -82,7 +82,20 @@ public class MainController {
 
     @FXML
     void onClickAddButton(ActionEvent event) {
+        Racer racer = new Racer();
+        racer.setId(genereteId());
 
+
+        // racerTable.getItems().add();
+
+    }
+
+    private int genereteId() {
+        int size = racerTable.getItems().size();
+        if(size>0){
+            return racerTable.getItems().get(size-1).getId()+1;
+        }
+        return 1;
     }
 
     @FXML
