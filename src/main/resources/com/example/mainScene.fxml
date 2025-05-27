@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="65.0" layoutY="14.0" text="Nevezés" />
+      <Label layoutX="10.0" layoutY="49.0" text="Id" />
+      <Label layoutX="10.0" layoutY="84.0" text="Név" />
+      <Label layoutX="9.0" layoutY="121.0" text="Születés" />
+      <Label layoutX="81.0" layoutY="155.0" text="Kategóriák" />
+      <TextField fx:id="idField" disable="true" layoutX="64.0" layoutY="45.0" prefHeight="26.0" prefWidth="62.0" />
+      <TextField fx:id="nameField" layoutX="64.0" layoutY="80.0" />
+      <DatePicker fx:id="birthPicker" layoutX="64.0" layoutY="117.0" prefHeight="26.0" prefWidth="161.0" />
+      <RadioButton id="junior" layoutX="61.0" layoutY="182.0" mnemonicParsing="false" text="18 év alatt">
+         <toggleGroup>
+            <ToggleGroup fx:id="category" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="senior" layoutX="61.0" layoutY="213.0" mnemonicParsing="false" text="18 vagy felette" toggleGroup="$category" />
+      <CheckBox fx:id="absoluteCheck" layoutX="61.0" layoutY="246.0" mnemonicParsing="false" text="abszolút" />
+      <Button layoutX="14.0" layoutY="275.0" mnemonicParsing="false" onAction="#onClickAddButton" text="Hozzáad" />
+      <Button layoutX="92.0" layoutY="275.0" mnemonicParsing="false" onAction="#onclickModifyButton" text="Módosít" />
+      <Button layoutX="174.0" layoutY="275.0" mnemonicParsing="false" onAction="#onClickDeleteButton" text="Töröl" />
+      <Button layoutX="85.0" layoutY="320.0" mnemonicParsing="false" onAction="#onClickAboutButton" text="Névjegy" />
+      <TableView fx:id="racerTable" layoutX="240.0" layoutY="10.0" prefHeight="380.0" prefWidth="392.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="42.0" text="Id" />
+          <TableColumn fx:id="nameCol" prefWidth="108.0" text="Név" />
+            <TableColumn fx:id="birthCol" prefWidth="94.0" text="Születés" />
+            <TableColumn fx:id="categoryCol" prefWidth="77.0" text="Kategória" />
+            <TableColumn fx:id="absoluteCol" prefWidth="70.0" text="Abszolút" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>
